@@ -16,3 +16,18 @@
 
 - name: enable docker service
   service: name=docker enabled=yes
+
+- name: install PIP for Python
+  apt: name=python-pip state=present
+
+- name: install Docker module for Python
+  pip: name=docker-py state=present
+
+- name: install labello app
+  docker:
+    name: labello
+    image: chaosdorf/labello
+    state: started
+    pull: always
+    ports:
+      - "8000:8000"
