@@ -17,8 +17,11 @@
 - name: enable docker service
   service: name=docker enabled=yes
 
+- name: install setuptools for Python
+  apt: name=python-setuptools state=present
+
 - name: install PIP for Python
-  apt: name=python-pip state=present
+  easy_install: name=pip state=present
 
 - name: install Docker module for Python
   pip: name=docker-py state=present
@@ -29,5 +32,6 @@
     image: chaosdorf/labello
     state: started
     pull: always
+    restart_policy: always
     ports:
       - "8000:8000"
