@@ -1,0 +1,2 @@
+[docker]
+dockerserver.ipv6.jetzt ansible_remote_user=root
