@@ -1,0 +1,89 @@
+dockerserver, dockerserver.chaosdorf.space {
+    tls {
+        dns cloudflare
+    }
+    gzip
+    header Strict-Transport-Security "max-age=172800;"
+    root /var/www/html
+}
+
+mete, mete.chaosdorf.space {
+    tls {
+        dns cloudflare
+    }
+    gzip
+    header Strict-Transport-Security "max-age=172800;"
+    proxy / "http://localhost:8081/" {
+        header_upstream Host {host}
+    }
+}
+
+ympd, ympd.chaosdorf.space {
+    tls {
+        dns cloudflare
+    }
+    gzip
+    header Strict-Transport-Security "max-age=172800;"
+    proxy / "http://localhost:8082/"
+}
+
+http://pizza, http://pizza.chaosdorf.space {
+    redir "https://pizza.chaosdorf.space{path}?{query}"
+}
+
+https://pizza.chaosdorf.space {
+    tls {
+        dns cloudflare
+    }
+    # People might type https://pizza/, but that produces a warning.
+    # So we just assume that people don't do that.
+    # (If they still click through the warning, they'll get the default "dockerserver" page.)
+    gzip
+    header Strict-Transport-Security "max-age=172800;"
+    proxy / "http://localhost:8083/"
+}
+
+labello, labello.chaosdorf.space {
+    tls {
+        dns cloudflare
+    }
+    gzip
+    header Strict-Transport-Security "max-age=172800;"
+    proxy / "http://localhost:8000/"
+}
+
+prittstift, prittstift.chaosdorf.space {
+    tls {
+        dns cloudflare
+    }
+    gzip
+    header Strict-Transport-Security "max-age=172800;"
+    proxy / "http://localhost:8001/"
+}
+
+pulseweb, pulseweb.chaosdorf.space {
+    tls {
+        dns cloudflare
+    }
+    gzip
+    header Strict-Transport-Security "max-age=172800;"
+    proxy / "http://localhost:8080/"
+}
+
+dashboard, dashboard.chaosdorf.space {
+    tls {
+        dns cloudflare
+    }
+    gzip
+    header Strict-Transport-Security "max-age=172800;"
+    proxy / "http://localhost:3030/"
+}
+
+fftalks, fftalks.chaosdorf.space {
+    tls {
+        dns cloudflare
+    }
+    gzip
+    header Strict-Transport-Security "max-age=172800;"
+    proxy / "http://localhost:4000/"
+}
