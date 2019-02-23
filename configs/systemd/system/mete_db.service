@@ -1,0 +1,9 @@
+[Unit]
+Description=db for mete
+Documentation=https://github.com/chaosdorf/mete
+After=docker.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/docker start --attach --interactive mete_db_1
+ExecStop=/usr/bin/docker stop mete_db_1

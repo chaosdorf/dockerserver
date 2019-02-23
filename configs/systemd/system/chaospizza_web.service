@@ -1,0 +1,13 @@
+[Unit]
+Description=backend for Chaospizza
+Documentation=https://github.com/chaosdorf/chaospizza
+After=docker.service
+Requires=chaospizza_postgresql.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/docker start --attach --interactive chaospizza_web_1
+ExecStop=/usr/bin/docker stop chaospizza_web_1
+
+[Install]
+WantedBy=multi-user.target

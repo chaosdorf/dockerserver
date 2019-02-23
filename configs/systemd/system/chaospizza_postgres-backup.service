@@ -1,0 +1,13 @@
+[Unit]
+Description=db backup for Chaospizza
+Documentation=https://github.com/chaosdorf/chaospizza
+After=docker.service
+Requires=chaospizza_postgresql.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/docker start --attach --interactive chaospizza_postgres-backup_1
+ExecStop=/usr/bin/docker stop chaospizza_postgres-backup_1
+
+[Install]
+WantedBy=multi-user.target
