@@ -1,6 +1,6 @@
 [Unit]
 Description=Python implementation of a telegram bot to access the Chaosdorf's Mete 
-Documentation=https://git.darknebu.la/cuminbreeze/Chaosdorf-Mete.git
+Documentation=https://github.com/chaosdorf/telemete.git
 After=docker.service
 
 [Service]
