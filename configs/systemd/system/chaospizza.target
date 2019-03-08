@@ -1,0 +1,7 @@
+[Unit]
+Description=main target for chaospizza
+Documentation=https://github.com/chaosdorf/chaospizza
+Requires=chaospizza_web.service chaospizza_postgresql.service chaospizza_postgres-backup.service
+
+[Install]
+WantedBy=multi-user.target
