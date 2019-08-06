@@ -1,7 +1,0 @@
-[Unit]
-Description=main target for mete
-Documentation=https://github.com/chaosdorf/mete
-Requires=mete_backend.service mete_db.service mete_db-backup.service
-
-[Install]
-WantedBy=multi-user.target
