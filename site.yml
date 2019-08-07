@@ -1,7 +1,0 @@
----
-
-- name: Set up host system
-  hosts: docker
-  become_user: root
-  roles:
-    - docker
