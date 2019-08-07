@@ -1,0 +1,12 @@
+[Unit]
+Description=Deploy new Docker stacks and update the existing ones
+Documentation=https://github.com/chaosdorf/docker-stacks
+Requires=docker.socket
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/git pull --ff
+ExecStart=/root/docker-stacks/deploy-stacks.sh
+WorkingDirectory=/root/docker-stacks
