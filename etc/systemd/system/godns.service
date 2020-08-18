@@ -1,0 +1,11 @@
+[Unit]
+Description=dyndns
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/godns -c /etc/godns.json
+DynamicUser=yes
+ProtectSystem=yes
+
+[Install]
+WantedBy=network.target
