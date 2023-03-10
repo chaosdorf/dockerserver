@@ -1,8 +1,5 @@
 *filter
-:INPUT ACCEPT [12172:1609135]
+:INPUT ACCEPT [1106021:809288890]
 :FORWARD ACCEPT [0:0]
-:OUTPUT ACCEPT [14697:2490875]
--A INPUT -p tcp -m tcp --dport 8080 -j REJECT --reject-with icmp6-port-unreachable
--A INPUT -p tcp -m tcp --dport 443 -j REJECT --reject-with icmp6-port-unreachable
--A INPUT -p tcp -m tcp --dport 80 -j REJECT --reject-with icmp6-port-unreachable
+:OUTPUT ACCEPT [1869418:230489025]
 COMMIT
