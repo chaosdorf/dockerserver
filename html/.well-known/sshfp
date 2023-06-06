@@ -1,0 +1,21 @@
+{
+    "hosts": {
+        "dockerserver": [
+            {
+                "algo": "ssh-ed25519",
+                "fp": "SHA256:KwIIMgM70Isfj50ta8q9LcOCH97FlpetLAA+jIQZQIM",
+                "port": 22
+            },
+            {
+                "algo": "ssh-ecdsa",
+                "fp": "SHA256:VsnRImAle2QoO1ghSCA9JO4finr6bQNs8CwSR4GY994",
+                "port": 22
+            },
+            {
+                "algo": "ssh-rsa",
+                "fp": "SHA256:TauqYnsSELqHvy/D2kqFSTKUA88E3y3a/h3Rv6Yt9bE",
+                "port": 22
+            }
+        ]
+    }
+}
