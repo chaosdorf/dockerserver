@@ -1,0 +1,11 @@
+[Unit]
+Description=socat
+After=network.target
+ 
+[Service]
+Type=simple
+ExecStart=/usr/bin/socat TCP6-LISTEN:%i,reuseaddr,fork,bind=[fd00:7::5054:ff:fe6b:fd7f] TCP4:127.0.0.1:%i
+Restart=on-abort
+ 
+[Install]
+WantedBy=multi-user.target

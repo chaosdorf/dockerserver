@@ -1,3 +1,5 @@
 {
-	  "live-restore": true
+  "ipv6": false,
+  "ip": "0.0.0.0",
+  "live-restore": true
 }
